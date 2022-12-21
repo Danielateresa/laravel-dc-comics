@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Archivio Comics</h1>
+    <h1>Comics Archives</h1>
 
     <div class="table-responsive">
         <table class="table table-primary">
