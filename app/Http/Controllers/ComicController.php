@@ -16,7 +16,10 @@ class ComicController extends Controller
     public function index()
     {
         //dd(Comic::all());
-        return view('index');
+        //inserisco il nuovo record all'inizio
+        $comics = Comic::orderByDesc('id')->get();
+
+        return view('index', compact('comics'));
     }
 
     /**
@@ -38,6 +41,19 @@ class ComicController extends Controller
     public function store(StoreComicRequest $request)
     {
         //dd($request->all());
+        //salvare i nuovi dati immessi come array associativo
+        $data =[
+            'title'=> $request['title'],
+            'title'=> $request['description'],
+            'title'=> $request['thumb'],
+            'title'=> $request['price'],
+            'title'=> $request['series'],
+            'title'=> $request['sale_date'],
+            'title'=> $request['type']
+        ];
+        Comic::create($request->all());
+        //reindirizzamento alla rotta index dopo l'add del nuovo comic
+        return redirect()->route('index');
     }
 
     /**
@@ -48,7 +64,6 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
     }
 
     /**
