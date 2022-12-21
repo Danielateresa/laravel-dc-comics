@@ -7,18 +7,19 @@
     <div class="container py-2">
         <h3>Comic info</h3>
         <div class="d-flex">
-
-            <img class="show" src="{{$comic->thumb}}" alt="{{$comic->title}}">
-
-            <div class="info ms-5">
-                <h3>Title: {{$comic->title}}</h3>
-
-                <h3>Description: {{$comic->description}}</h3>
-                <h3>Price: {{$comic->price}} €</h3>
-                <h3>Series: {{$comic->series}}</h3>
-                <h3>Sale date: {{$comic->sale_date}}</h3>
-                <h3>Type: {{$comic->type}}</h3>
+            <div class="col-4">
+                <img class="w-100" src="{{$comic->thumb}}" alt="{{$comic->title}}">
             </div>
+            <div class="col-8 info ms-5">
+                <h3>Title: <span>{{$comic->title}}</span> </h3>
+
+                <h3>Description: <span>{{$comic->description}}</span> </h3>
+                <h3>Price: <span>{{$comic->price}} €</span> </h3>
+                <h3>Series: <span>{{$comic->series}}</span> </h3>
+                <h3>Sale date: <span>{{$comic->sale_date}}</span> </h3>
+                <h3>Type: <span>{{$comic->type}}</span> </h3>
+            </div>
+
         </div>
 
     </div>
