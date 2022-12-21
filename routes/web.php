@@ -18,3 +18,5 @@ Route::get('/', [ComicController::class, 'index'])->name('index');
 Route::get('/create', [ComicController::class, 'create'])->name('create');
 Route::post('/', [ComicController::class, 'store'])->name('store');
 Route::get('/{comic}', [ComicController::class, 'show'])->name('show');
+
+Route::resource('comics', ComicController::class);
