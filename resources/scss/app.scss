@@ -1,6 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 
+header,
+footer {
+    height: 50px;
+}
+
 main {
+    height: calc(100vh - 100px);
+    overflow: auto;
 
     .thumb {
         width: 80px;
