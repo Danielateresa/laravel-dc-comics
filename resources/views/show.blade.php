@@ -6,11 +6,11 @@
 
     <div class="container py-2">
         <h3>Comic info</h3>
+        <div class="d-flex">
 
-        <div class="card">
-            <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+            <img class="show" src="{{$comic->thumb}}" alt="{{$comic->title}}">
 
-            <div class="card-body">
+            <div class="info ms-5">
                 <h3>Title: {{$comic->title}}</h3>
 
                 <h3>Description: {{$comic->description}}</h3>
@@ -22,6 +22,7 @@
         </div>
 
     </div>
+</div>
 
 </div>
 @endsection

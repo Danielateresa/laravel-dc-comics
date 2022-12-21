@@ -24,7 +24,7 @@
                 <tr class="table_primary">
                     <td scope="row">{{$comic->id}}</td>
                     <td>{{$comic->title}}</td>
-                    <td><img src="{{$comic->thumb}}" alt="{{$comic->title}}"></td>
+                    <td><img class="thumb" src="{{$comic->thumb}}" alt="{{$comic->title}}"></td>
                     <td>{{$comic->description}}</td>
                     <td>{{$comic->price}} €</td>
                     <td>{{$comic->series}}</td>
