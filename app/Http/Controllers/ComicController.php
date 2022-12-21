@@ -15,7 +15,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        dd(Comic::all());
+        //dd(Comic::all());
+        return view('index');
     }
 
     /**
@@ -25,7 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
