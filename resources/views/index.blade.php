@@ -4,6 +4,15 @@
 <div class="container">
     <h1>Comics Archives</h1>
 
+    @if(session('message'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+        <strong>{{session('message')}}</strong>
+    </div>
+    @endif
+    <!-- alert creazione,modifica,cancellazione record -->
+
     <div class="table-responsive">
         <table class="table table-primary">
             <thead>

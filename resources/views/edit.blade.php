@@ -46,7 +46,7 @@
                 <input type="text" name="type" id="type" class="form-control" placeholder="type here"
                     aria-describedby="helpId" value="{{$comic->title}}">
             </div>
-            <button type="submit" class="btn btn-primary my-3">Add Comic</button>
+            <button type="submit" class="btn btn-primary my-3">Edit Comic</button>
         </form>
     </div>
 

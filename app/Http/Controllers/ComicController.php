@@ -53,7 +53,7 @@ class ComicController extends Controller
         ];
         Comic::create($request->all());
         //reindirizzamento alla rotta index dopo l'add del nuovo comic
-        return redirect()->route('index');
+        return redirect()->route('index')->with('message', "$comic->title added");
     }
 
     /**
@@ -98,7 +98,8 @@ class ComicController extends Controller
         ];
 
         $comic->update($data);
-        return to_route('index');
+        return to_route('index')->with('message', "$comic->title modified");
+        ;
     }
 
     /**
@@ -110,6 +111,7 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return to_route('index');
+        return to_route('index')->with('message', "$comic->title deleted");
+        ;
     }
 }
