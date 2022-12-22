@@ -32,7 +32,7 @@
                     <td>{{$comic->type}}</td>
                     <td>
                         <a href="{{route('show',$comic->id)}}"><i class="fa-regular fa-eye px-1"></i></a>
-                        <a href=""><i class="fa-regular fa-pen-to-square px-1"></i></a>
+                        <a href="{{route('edit',$comic->id)}}"><i class="fa-regular fa-pen-to-square px-1"></i></a>
                         <a href=""><i class="fa-solid fa-trash px-1"></i></a>
                     </td>
                 </tr>

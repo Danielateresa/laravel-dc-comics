@@ -44,12 +44,12 @@ class ComicController extends Controller
         //salvare i nuovi dati immessi come array associativo
         $data =[
             'title'=> $request['title'],
-            'title'=> $request['description'],
-            'title'=> $request['thumb'],
-            'title'=> $request['price'],
-            'title'=> $request['series'],
-            'title'=> $request['sale_date'],
-            'title'=> $request['type']
+            'description'=> $request['description'],
+            'thumb'=> $request['thumb'],
+            'price'=> $request['price'],
+            'series'=> $request['series'],
+            'sale_date'=> $request['sale_date'],
+            'type'=> $request['type']
         ];
         Comic::create($request->all());
         //reindirizzamento alla rotta index dopo l'add del nuovo comic
@@ -75,7 +75,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('edit', compact('comic'));
     }
 
     /**
@@ -87,7 +87,18 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        //
+        $data =[
+            'title'=> $request['title'],
+            'description'=> $request['description'],
+            'thumb'=> $request['thumb'],
+            'price'=> $request['price'],
+            'series'=> $request['series'],
+            'sale_date'=> $request['sale_date'],
+            'type'=> $request['type']
+        ];
+
+        $comic->update($data);
+        return to_route('index');
     }
 
     /**

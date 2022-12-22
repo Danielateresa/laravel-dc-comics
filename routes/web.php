@@ -18,5 +18,8 @@ Route::get('/', [ComicController::class, 'index'])->name('index');
 Route::get('/create', [ComicController::class, 'create'])->name('create');
 Route::post('/', [ComicController::class, 'store'])->name('store');
 Route::get('/{comic}', [ComicController::class, 'show'])->name('show');
+Route::put('/{comic}', [ComicController::class, 'update'])->name('update');
+Route::get('/{comic}/edit', [ComicController::class, 'edit'])->name('edit');
+//in questo caso ho riassegnato le rotte
 
 Route::resource('comics', ComicController::class);
