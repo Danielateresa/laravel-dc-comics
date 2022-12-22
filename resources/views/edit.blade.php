@@ -5,7 +5,7 @@
     <h1>Comics Archives</h1>
 
     <div class="container py-2">
-        <h3>Add a new Comic to archives</h3>
+        <h3>Edit Comic</h3>
 
         <form action="{{route('update',$comic->id)}}" method="post">
             @csrf
