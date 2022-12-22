@@ -31,9 +31,17 @@
                     <td>{{$comic->sale_date}}</td>
                     <td>{{$comic->type}}</td>
                     <td>
-                        <a href="{{route('show',$comic->id)}}"><i class="fa-regular fa-eye px-1"></i></a>
-                        <a href="{{route('edit',$comic->id)}}"><i class="fa-regular fa-pen-to-square px-1"></i></a>
-                        <a href=""><i class="fa-solid fa-trash px-1"></i></a>
+                        <a href="{{route('show',$comic->id)}}"><button type="submit" class="btn btn-prymary"><i
+                                    class="fa-regular fa-eye px-1"></i></button></a>
+                        <a href="{{route('edit',$comic->id)}}"><button type="submit" class="btn btn-prymary"><i
+                                    class="fa-regular fa-pen-to-square px-1"></i></button></a>
+                        <form action="{{route('destroy',$comic->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-warning"><i
+                                    class="fa-solid fa-trash px-1"></i></button>
+                        </form>
+
                     </td>
                 </tr>
                 @empty

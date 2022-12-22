@@ -20,6 +20,7 @@ Route::post('/', [ComicController::class, 'store'])->name('store');
 Route::get('/{comic}', [ComicController::class, 'show'])->name('show');
 Route::put('/{comic}', [ComicController::class, 'update'])->name('update');
 Route::get('/{comic}/edit', [ComicController::class, 'edit'])->name('edit');
+Route::delete('/{comic}', [ComicController::class, 'destroy'])->name('destroy');
 //in questo caso ho riassegnato le rotte
 
 Route::resource('comics', ComicController::class);
