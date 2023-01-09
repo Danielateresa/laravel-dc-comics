@@ -38,11 +38,13 @@ class ComicController extends Controller
      * @param  \App\Http\Requests\StoreComicRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreComicRequest $request)
+    public function store(StoreComicRequest $request, Comic $comic)
     {
         //dd($request->all());
         //salvare i nuovi dati immessi come array associativo
-        $data =[
+        $validated_data = $request->validated();
+        dd($validated_data);
+        /* $data =[
             'title'=> $request['title'],
             'description'=> $request['description'],
             'thumb'=> $request['thumb'],
@@ -51,7 +53,7 @@ class ComicController extends Controller
             'sale_date'=> $request['sale_date'],
             'type'=> $request['type']
         ];
-        Comic::create($data);
+        Comic::create($data); */
         //reindirizzamento alla rotta index dopo l'add del nuovo comic
         return redirect()->route('index')->with('message', "$comic->title added");
     }

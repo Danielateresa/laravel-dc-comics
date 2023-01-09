@@ -33,4 +33,9 @@ class UpdateComicRequest extends FormRequest
                 'type'=>'nullable|max:255',
         ];
     }
+
+    public function messages()
+    {
+        //messaggi di errore
+    }
 }
