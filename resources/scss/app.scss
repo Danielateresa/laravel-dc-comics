@@ -3,6 +3,11 @@
 header,
 footer {
     height: 50px;
+
+    .active {
+        font-weight: bold;
+
+    }
 }
 
 main {
