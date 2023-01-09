@@ -41,9 +41,13 @@ class ComicController extends Controller
     public function store(StoreComicRequest $request, Comic $comic)
     {
         //dd($request->all());
-        //salvare i nuovi dati immessi come array associativo
+
+        //la variabile contiene i nuovi dati validati secondo le regole (request)
         $validated_data = $request->validated();
-        dd($validated_data);
+        //dd($validated_data);
+        $comic = Comic::create($validated_data);
+
+        //salvare i nuovi dati immessi come array associativo
         /* $data =[
             'title'=> $request['title'],
             'description'=> $request['description'],
@@ -89,7 +93,11 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data =[
+        $validated_data = $request->validated();
+
+        $comic->update($validated_data);
+
+        /* $data =[
             'title'=> $request['title'],
             'description'=> $request['description'],
             'thumb'=> $request['thumb'],
@@ -99,7 +107,7 @@ class ComicController extends Controller
             'type'=> $request['type']
         ];
 
-        $comic->update($data);
+        $comic->update($data); */
         return to_route('index')->with('message', "$comic->title modified");
         ;
     }
@@ -114,6 +122,5 @@ class ComicController extends Controller
     {
         $comic->delete();
         return to_route('index')->with('message', "$comic->title deleted");
-        ;
     }
 }

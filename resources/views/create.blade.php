@@ -28,7 +28,7 @@
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input type="number" name="price" id="price" class="form-control" placeholder="price here"
-                    aria-describedby="helpId">
+                    aria-describedby="helpId" step="0.01">
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Series</label>

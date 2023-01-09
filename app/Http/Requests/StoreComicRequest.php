@@ -26,7 +26,7 @@ class StoreComicRequest extends FormRequest
         //regole di validazione
         return [
             'title'=>'required|min:3',
-            'description'=>'nullable|max 255',
+            'description'=>'nullable|max:255',
             'thumb'=>'nullable|max:255',
             'price'=>'nullable|decimal:2',
             'series'=>'nullable|max:255',
