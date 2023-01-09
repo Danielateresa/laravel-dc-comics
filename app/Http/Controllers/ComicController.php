@@ -51,7 +51,7 @@ class ComicController extends Controller
             'sale_date'=> $request['sale_date'],
             'type'=> $request['type']
         ];
-        Comic::create($request->all());
+        Comic::create($data);
         //reindirizzamento alla rotta index dopo l'add del nuovo comic
         return redirect()->route('index')->with('message', "$comic->title added");
     }
